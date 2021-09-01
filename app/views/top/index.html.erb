@@ -1,0 +1,43 @@
+<div class="top">
+    <div class="top-main">
+        <div class="container">
+            <div class="row col-lg-6">
+                <div class="form-fream">
+                    <div class="form-area">
+                        <p class="form-area-title mb-4">つくる、つながる、とどける。</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="m-3">
+        <h1 class="section-title">ポータルメニュー</h1>
+      </div>
+        <div class="panel-area m-5">
+            <div class="row">
+                <div class="panel-item col-6 col-md-4">
+                <%= link_to customers_path do %>
+                    <span>お客様一覧</span>
+                    <img class="panel-image shadow" src="https://4.bp.blogspot.com/-E5SFXjWPayU/WR6ns-9naMI/AAAAAAABEVw/d2cE-VM_B_AnQp3PHoFIG8esHWmBB6YXgCLcB/s400/keirou_obaachan_smile2.png" width　= "282px" height = "360px">
+                    <div class="shadow"></div>
+                 <% end %>
+                </div>
+                <div class="panel-item col-6 col-md-4">
+                <%= link_to new_customer_path do %>
+                    <span>お客様登録</span>
+                    <img class="panel-image shadow" src="https://4.bp.blogspot.com/-J0ndBrAVtNM/Wn1WBlE0alI/AAAAAAABKHE/N977kGZO0FoDzPcJuXO-WMmk4QIOwRPzwCLcBGAs/s450/map_open.png" width　= "282" height = "360">
+                    <div class="shadow"></div>
+                <% end %>
+                </div>
+                <div class="panel-item col-6 col-md-4">
+                <%= link_to posts_path do %>
+                    <span>社内ニュース</span>
+                    <img class="panel-image shadow" src="https://2.bp.blogspot.com/-kzMX00vtkpM/XNE_YUD_oUI/AAAAAAABSxI/pkrliYc82Dwq-uWojZb5RO91HOwFhX37wCLcBGAs/s400/shinbun_newspaper_english.png" width　= "282" height = "360">
+                    <div class="shadow"></div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
