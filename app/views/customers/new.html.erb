@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="gmap">
+      <!-- 地名入力用のinputを追加 -->
+      <input id="address" type="textbox" value="東京">
+
+      <!-- buttonをクリックしたらcodeAddressを実行　-->
+      <input type="button" value="検索" onclick="codeAddress()">
+      <div id='map'>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div class="p-5 m-5 shadow">
+          <div>
+            <h3>お客様登録</h3>
+          </div>
+          <%= form_with model: Customer.new do |f| %>
+          <table>
+            <div class="form-group">
+              <%= f.label :name ,"お客様氏名", class: "control-label" %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :address ,"お客様住所", class: "control-label" %>
+              <%= f.text_field :address, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :number ,"電話番号", class: "control-label" %>
+              <%= f.telephone_field :number, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :right ,"主権者", class: "control-label" %>
+              <%= f.check_box :right, {}, true, false %>
+            </div>
+            <div class="form-group">
+              <%= f.label :assets ,"資産背景", class: "control-label" %>
+              <%= f.text_area :assets, class: "form-control", size: "40x20" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :memo ,"お客様メモ", class: "control-label" %>
+              <%= f.text_area :memo, class: "form-control", size: "40x20" %>
+            </div>
+          </table>
+            <div class="form-group">
+              <%= f.submit "登録" , class: "btn btn-primary" %>
+            </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+
+<style>
+  #map {
+    height: 400px;
+  }
+</style>
+
+<script>
+  /*
+  mapを関数の外で定義(codeAddressでも使うため)
+  geocoderを用意
+  */
+
+  let map
+  let geocoder
+
+  function initMap() {
+    // geocoderを初期化
+    // 引用者注:google.maps.Geocoderインスタンスを生成
+    geocoder = new google.maps.Geocoder()
+
+    // 引用者注:google.maps.Mapインスタンスを生成することで、地図のデフォルト位置(緯度経度、ズーム)を設定
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: -34.397,
+        lng: 150.644
+      },
+      zoom: 8
+    });
+  }
+
+  function codeAddress() {
+    // 入力を取得
+    let inputAddress = document.getElementById('address').value;
+
+    // geocodingしたあとmapを移動
+    geocoder.geocode({
+      'address': inputAddress
+    }, function (results, status) {
+      if (status == 'OK') {
+        // map.setCenterで地図が移動
+        map.setCenter(results[0].geometry.location);
+
+        // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+        // google.maps.Markerインスタンスを生成
+        var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer>
+</script>

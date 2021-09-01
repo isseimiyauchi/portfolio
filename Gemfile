@@ -40,6 +40,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'devise'
+  gem 'devise-i18n'
+  gem 'devise-i18n-views'
+  gem 'bootstrap', '~> 4.3.1'
+  gem 'jquery-rails'
+  gem 'geocoder'
+  gem 'dotenv-rails'
+  gem 'gon'
+  gem 'ransack'
 end
 
 group :test do
@@ -48,6 +57,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

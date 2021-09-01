@@ -1,0 +1,20 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <% if user_signed_in? %>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          メニュー
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><%= link_to "お客様一覧", customers_path, class: "dropdown-item" %></li>
+          <li><%= link_to "お客様登録", new_customer_path, class: "dropdown-item" %></li>
+          <li><%= link_to "社内ニュース", posts_path, class: "dropdown-item" %></li>
+        </ul>
+      </div>
+    <% else %>
+      <%= button_to "ログイン", new_user_session_path, class: 'btn btn-primary', method: :get %> <!-- ログイン画面に移行する -->
+      <%= button_to "新規登録", new_user_registration_path, class: 'btn btn-secondary', method: :get %> <!-- 新規登録画面に移行する -->
+    <% end %>
+  </nav>
+</div>
