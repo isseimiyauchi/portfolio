@@ -45,6 +45,11 @@ jobs:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
       - run:
+          name: GoogleMap API
+          command: |
+            touch .env
+            echo GOOGLE_MAP_API_KEY=$GOOGLE_MAP_API_KEY > .env
+      - run:
           name: Rspec
           command: bundle exec rspec
 
