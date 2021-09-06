@@ -9,6 +9,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.boolean :right
       t.float :longitude
       t.float :latitude
+      t.integer :user_id
 
 
       t.timestamps

@@ -4,27 +4,19 @@
     </div>
   </div>
   <div class="customers mt-5">
-    <div class="search_wap mb-5">
-      <%= search_form_for @q, url: search_customers_path do |f| %>
-        <%= f.text_field :name_cont , placeholder: "お客様氏名" , class: 'input' %>
-        <%= button_tag type: 'submit' , class: 'search__button' do %>
-        <% end %>
-      <% end %>
-      <div class="icon_wap">
-        <i class="fas fa-search"></i>
-      </div>
-    </div>
-    <% @customers.each do |customer| %>
-      <ol class="customer-information">
+    <% @search_customers.each do |customer| %>
+      <ol>
         <%= link_to customer do %>
           <li>
             <p><%= customer.name %></p>
             <p><%= customer.address %></p>
             <p><%= customer.memo %></p>
+            <p><%= customer.longitude%><p>
           </li>
         <% end %>
       </ol>
     <% end %>
+    <div><%= link_to "戻る", customers_path %></div>
   </div>
 </div>
 

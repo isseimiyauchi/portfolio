@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_action :set_search, only: [:index, :show, :search]
+
   def index
     @customers = Customer.all
     gon.customer = @customers
@@ -50,8 +52,12 @@ class CustomersController < ApplicationController
 
   private
 
-  # ストロングパラメーター
   def customer_params
-    params.require(:customer).permit(:name, :address, :number, :assets, :right, :memo)
+    params.require(:customer).permit(:name, :address, :number, :assets, :right, :memo, :user_id)
+  end
+
+  def set_search
+    @q = Customer.ransack(params[:q])
+    @search_customers = @q.result(distinct: true)
   end
 end

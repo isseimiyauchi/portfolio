@@ -1,8 +1,9 @@
-<div class="container align-items-center justify-content-center">
+<div class="container mt-10">
   <div class="device_frame shadow">
-   <div class="device_inner">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <p class="title">ログイン</p>
+    <div class="device_inner">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages" , resource: resource %>
+        <p class="title">ログイン</p>
         <div class="form-group">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
         </div>
@@ -15,4 +16,3 @@
     </div>
   </div>
 </div>
-

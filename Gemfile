@@ -40,15 +40,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'devise'
-  gem 'devise-i18n'
-  gem 'devise-i18n-views'
-  gem 'bootstrap', '~> 4.3.1'
-  gem 'jquery-rails'
-  gem 'geocoder'
-  gem 'dotenv-rails'
-  gem 'gon'
-  gem 'ransack'
 end
 
 group :test do
@@ -60,7 +51,22 @@ group :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'faker'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+gem 'geocoder'
+gem 'dotenv-rails'
+gem 'gon'
+gem 'ransack'
+gem 'pry-byebug'
+gem 'pry-doc'
+gem 'pry-rails'

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_062732) do
     t.boolean "right"
     t.float "longitude"
     t.float "latitude"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_062732) do
     t.text "title"
     t.text "from"
     t.text "detail"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

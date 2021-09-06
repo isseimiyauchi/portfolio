@@ -1,39 +1,43 @@
-<div class="container mt-5 ml-5">
-  <div class="d-flex flex-row bd-highlight mb-3">
+<div class="container">
+  <div class="d-flex flex-row bd-highlight pt-5">
     <div class="p-2 bd-highlight">
       <div class="search_wap">
         <%= search_form_for @q, url: search_posts_path do |f| %>
           <%= f.text_field :detail_cont , placeholder: "何かお探しですか？" , class: 'input' %>
-            <%= button_tag type: 'submit' , class: 'search__button' do %>
-              <% end %>
-                <% end %>
-                  <div class="icon_wap">
-                    <i class="fas fa-search"></i>
-                  </div>
-      </div>
-    </div>
-      <div class="p-2 bd-highlight">
-        <p><%= link_to "新規投稿" , new_post_path %></p>
-      </div>
-  </div>
-  <div class="row">
-    <div class="card-group mb-3">
-      <% @search_posts.each do |post| %>
-        <div class="card my-3" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= post.title %>
-            </h5>
-            <p class="card-text">
-              <%= post.from %>
-            </p>
-            <p class="card-text">
-              <%= post.created_at %>
-            </p>
-            <%= link_to "詳細" , post %>
-          </div>
+          <%= button_tag type: 'submit' , class: 'search__button' do %>
+          <% end %>
+        <% end %>
+        <div class="icon_wap">
+          <i class="fas fa-search"></i>
         </div>
-      <% end %>
+      </div>
     </div>
+    <div class="p-2 bd-highlight">
+      <div class="new-post">
+        <p><%= link_to "新規投稿" , new_post_path, id: "link_new_post" %></p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">タイトル</th>
+          <th scope="col">差出人</th>
+          <th scope="col">投稿日時</th>
+          <th scope="col">詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.from %></td>
+            <td><%= post.created_at.strftime("%Y年%m月%d日") %></td>
+            <td><%= link_to "詳細", post, id: "link_to_post" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
