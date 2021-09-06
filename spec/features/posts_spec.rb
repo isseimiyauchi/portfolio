@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'visit#index', type: :feature do
-  describe 'display product details' do
+RSpec.feature '記事画面確認テスト', type: :feature do
+  describe '#index' do
     let(:user) { create(:user) }
     let(:post) { create(:post, user: user) }
 
@@ -16,7 +16,7 @@ RSpec.feature 'visit#index', type: :feature do
     end
   end
 
-  describe 'display product details' do
+  describe '#show' do
     let(:user) { create(:user) }
     let(:post) { create(:post, user: user) }
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'visit#index', type: :feature do
-  describe 'customers' do
+RSpec.feature 'お客様情報表示確認テスト', type: :feature do
+  describe '#index' do
     let(:user) { create(:user) }
     let(:customer) { create(:customer, user_id: user.id) }
 
