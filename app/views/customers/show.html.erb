@@ -10,19 +10,19 @@
           <h3>お客様情報</h3>
         </div>
         <table>
-          <tr>
+          <tr class="customer-line">
             <th>氏名</th>
             <td><%= @customer.name %></td>
           </tr>
-          <tr>
+          <tr class="customer-line">
             <th>住所</th>
             <td><%= @customer.address %></td>
           </tr>
-          <tr>
+          <tr class="customer-line">
             <th>電話番号</th>
             <td><%= @customer.number %></td>
           </tr>
-          <tr>
+          <tr class="customer-line">
             <th>主権者</th>
             <td><% if @customer.right == true %>
               ○
@@ -30,18 +30,19 @@
 
             <% end %></td>
           </tr>
-          <tr>
+          <tr class="customer-line">
             <th>資産背景</th>
             <td><%= @customer.assets %></td>
           </tr>
-          <tr>
+          <tr class="customer-line">
             <th>メモ</th>
             <td><%= @customer.memo %></td>
           </tr>
         </table>
-        <%= link_to "編集", edit_customer_path, id: "link_to_edit" %>
-        <%= button_to "Delete", customer_path(@customer), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-        <%= link_to 'Destroy', customer_path(@customer), method: :delete, data: { confirm: '削除しますか？' } %>
+        <div class="d-flex flex-row bd-highlight mt-3">
+          <%= link_to "編集", edit_customer_path, id: "link_to_edit", class: "bd-highlight" %>
+          <%= button_to "削除", customer_path(@customer), method: :delete, class: "ml-2 bd-highlight" %>
+        </div>
       </div>
     </div>
   </div>

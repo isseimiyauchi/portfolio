@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "社内ニュース確認テスト", type: :request do
   describe "#index" do
     let(:user) { create(:user) }
-    let(:post) { create(:post, user: user) }
+    let(:post) { create(:post, user_id: user.id) }
 
     before do
       sign_in user
@@ -20,7 +20,7 @@ RSpec.describe "社内ニュース確認テスト", type: :request do
 
   describe "#new" do
     let(:user) { create(:user) }
-    let(:post) { create(:post, user: user) }
+    let(:post) { create(:post, user_id: user.id) }
     it 'リクエストが成功すること' do
       sign_in user
       get new_post_path
@@ -30,7 +30,7 @@ RSpec.describe "社内ニュース確認テスト", type: :request do
 
   describe "#show" do
     let(:user) { create(:user) }
-    let(:post) { create(:post, user: user) }
+    let(:post) { create(:post, user_id: user.id) }
     before do
       sign_in user
       get post_path(post.id)

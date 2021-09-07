@@ -3,7 +3,8 @@
     <div>
       <h3>新規投稿</h3>
     </div>
-    <%= form_with model: Post.new do |f| %>
+    <%= form_with model: Post.new, local: true do |f| %>
+      <%= render 'layouts/error_messages' , model: @post %>
       <div class="form-group">
         <%= f.label :title, "タイトル" , class: "control-label" %>
         <%= f.text_field :title, class: "form-control" %>

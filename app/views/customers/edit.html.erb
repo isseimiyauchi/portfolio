@@ -9,7 +9,8 @@
         <div>
           <h3>お客様登録</h3>
         </div>
-        <%= form_with model: @customer do |f| %>
+        <%= form_with model: @customer, local: true do |f| %>
+          <%= render 'layouts/error_messages' , model: @customer %>
           <table>
             <div class="form-group">
               <%= f.label :name ,"お客様氏名", class: "control-label" %>

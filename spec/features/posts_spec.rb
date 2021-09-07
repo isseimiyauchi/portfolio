@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature '記事画面確認テスト', type: :feature do
   describe '#index' do
     let(:user) { create(:user) }
-    let(:post) { create(:post, user: user) }
+    let(:post) { create(:post, user_id: user.id) }
 
     before do
       sign_in user
@@ -18,7 +18,7 @@ RSpec.feature '記事画面確認テスト', type: :feature do
 
   describe '#show' do
     let(:user) { create(:user) }
-    let(:post) { create(:post, user: user) }
+    let(:post) { create(:post, user_id: user.id) }
 
     before do
       sign_in user

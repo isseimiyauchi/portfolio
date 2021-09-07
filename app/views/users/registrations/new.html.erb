@@ -13,7 +13,7 @@
         <div class="form-group">
           <%= f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: "パスワード確認" ,　class: "form-control" %>
         </div>
-          <%= f.submit "ログイン", class: "form-control btn-primary my-4" %>
+          <%= f.submit "新規登録", class: "form-control btn-primary my-4" %>
       <% end %>
       <%= link_to "ログイン" , new_user_session_path, class: 'nav-link active' , method: :get %>
     </div>

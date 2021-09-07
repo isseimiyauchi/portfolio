@@ -68,35 +68,28 @@ tr {
   border-color: inherit;
 }
 
-h2 {
-  position: relative;
-  display: inline-block;
-  height: 64px;
-  margin-left: 30px;
-  padding: 1rem 2rem 1rem 3rem;
+.success {
+  background-color: #98ecaa7a;
   color: #fff;
-  background: #0c0b0b;
+  text-align: center;
 }
 
-h2:before {
-  position: absolute;
-  top: 0;
-  left: -30px;
-  content: '';
-  border-width: 32px 30px 32px 0;
-  border-style: solid;
-  border-color: transparent #030303 transparent transparent;
+.danger {
+  background-color: #ec98ac8f;
+  color: #fff;
+  text-align: center;
 }
 
-h2:after {
-  position: absolute;
-  top: calc(50% - 7px);
-  left: -10px;
-  width: 14px;
-  height: 14px;
-  content: '';
-  border-radius: 50%;
-  background: #fff;
+.notice {
+  background-color: aqua;
+  color: #fff;
+  text-align: center;
+}
+
+.alert {
+  background-color: #ff7f50;
+  color: #fff;
+  text-align: center;
 }
 
 //header
@@ -104,8 +97,6 @@ h2:after {
   position: relative;
   background-color: #def7ff;
 }
-
-
 
 .footer {
   color: #fff;
@@ -200,6 +191,37 @@ h2:after {
 
 
 //top_page
+.menu-nav {
+  position: relative;
+  display: inline-block;
+  height: 64px;
+  margin-left: 30px;
+  padding: 1rem 2rem 1rem 3rem;
+  color: #fff;
+  background: #0c0b0b;
+}
+
+.menu-nav:before {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  content: '';
+  border-width: 32px 30px 32px 0;
+  border-style: solid;
+  border-color: transparent #030303 transparent transparent;
+}
+
+.menu-nav:after {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: -10px;
+  width: 14px;
+  height: 14px;
+  content: '';
+  border-radius: 50%;
+  background: #fff;
+}
+
 .top .top-main {
   background-image: url(https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
@@ -335,4 +357,8 @@ h2:after {
 .customer-information {
   list-style: none;
   padding: 0;
+}
+
+.customer-line {
+  height: 30px;
 }
