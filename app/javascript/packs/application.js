@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import 'bootstrap';
-import 'assets/stylesheets/application.css';
+import '../stylesheets/application';
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -17,8 +17,5 @@ import 'assets/stylesheets/application.css';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-//= require jquery3
-//= require popper
-//= require bootstrap
 //= require underscore
 //= require gmaps/google
