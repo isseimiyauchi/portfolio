@@ -113,6 +113,21 @@ tr {
     font-size: 16px;
 }
 
+.test-user-nav {
+  text-align: center;
+}
+
+.test-user {
+  background-color: aquamarine;
+  border-radius: 4px;
+  border: cyan;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+  height: auto;
+  width: 300px;
+}
+
 //post
 .post-content {
   border-bottom: 1px solid #eaedef;
@@ -132,6 +147,14 @@ tr {
   width: 210px;
   margin-left: 3px;
   padding: 20px;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
 }
 
 @mixin input{

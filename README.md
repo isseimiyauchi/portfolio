@@ -1,24 +1,16 @@
-# README
+### アプリケーションの機能
+## customerページ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## postページ
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+### 環境
+- フレームワーク
+  Ruby on Rails
+- インフラ
+  heroku, Docker
+- データベース
+  Postgres
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

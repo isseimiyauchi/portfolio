@@ -30,7 +30,7 @@ ja:
     attributes:
       customer:
         name: お客様氏名
-        memo: お客様詳細
+        memo: お客様メモ
       post:
         title: タイトル
         from: 差出人

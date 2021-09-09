@@ -13,6 +13,7 @@ class CustomersController < ApplicationController
 
   def create
     @customer = Customer.new(customer_params)
+    @customer.user_id = current_user.id
       if @customer.save
         flash[:success] = "お客様情報を新規登録しました。"
         redirect_to :customers

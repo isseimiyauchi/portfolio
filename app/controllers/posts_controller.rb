@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_search, only: [:index, :show, :search]
+  before_action :authenticate_user!, only: [:show, :create]
 
   def index
-    @posts = Post.all
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
   end
 
   def new
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params_posts)
+    @post.user_id = current_user.id
     if @post.save
       flash[:success] = "記事を新規投稿しました。"
       redirect_to posts_url
@@ -22,12 +24,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @like = Like.new
   end
 
   private
 
   def params_posts
-    params.require(:post).permit(:title, :from, :detail)
+    params.require(:post).permit(:title, :detail, :user_id, tag_ids: [])
   end
 
   def set_search

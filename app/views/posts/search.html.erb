@@ -9,6 +9,7 @@
           <th scope="col">タイトル</th>
           <th scope="col">差出人</th>
           <th scope="col">投稿日時</th>
+          <th scope="col">詳細</th>
         </tr>
       </thead>
       <tbody>
@@ -18,10 +19,15 @@
               <%= post.title %>
             </td>
             <td>
-              <%= post.from %>
+              <% post.tags.each do |tag| %>
+                <%= tag.name %>
+              <% end %>
             </td>
             <td>
               <%= post.created_at.strftime("%Y年%m月%d日") %>
+            </td>
+            <td>
+              <%= link_to "詳細" , post, id: "link_to_post" %>
             </td>
           </tr>
         <% end %>

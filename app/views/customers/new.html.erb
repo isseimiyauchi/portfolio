@@ -14,32 +14,32 @@
         <%= form_with model: Customer.new, local: true do |f| %>
           <%= render 'layouts/error_messages' , model: @customer %>
           <table>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :name ,"お客様氏名", class: "control-label" %>
               <%= f.text_field :name, class: "form-control" %>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :address ,"お客様住所", class: "control-label" %>
               <%= f.text_field :address, class: "form-control" %>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :number ,"電話番号", class: "control-label" %>
               <%= f.telephone_field :number, class: "form-control" %>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :right ,"主権者", class: "control-label" %>
               <%= f.check_box :right, {}, true, false %>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :assets ,"資産背景", class: "control-label" %>
               <%= f.text_area :assets, class: "form-control", size: "40x20" %>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.label :memo ,"お客様メモ", class: "control-label" %>
               <%= f.text_area :memo, class: "form-control", size: "40x20" %>
             </div>
           </table>
-            <div class="form-group">
+            <div class="form-group mt-2">
               <%= f.submit "登録" , class: "btn btn-primary" %>
             </div>
         <% end %>

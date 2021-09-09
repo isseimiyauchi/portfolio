@@ -10,6 +10,15 @@
         <div class="icon_wap">
           <i class="fas fa-search"></i>
         </div>
+        <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
+      <%= select_tag :tag_id,
+                     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                     {
+                       prompt: 'タグで絞り込み検索',
+                       onchange: 'submit(this.form);'
+                     }
+      %>
+    <% end %>
       </div>
     </div>
     <div class="p-2 bd-highlight">
@@ -32,7 +41,10 @@
         <% @posts.each do |post| %>
           <tr>
             <td><%= post.title %></td>
-            <td><%= post.from %></td>
+            <td><% post.tags.each do |tag| %>
+                  <%= tag.name %>
+                <% end %>
+            </td>
             <td><%= post.created_at.strftime("%Y年%m月%d日") %></td>
             <td><%= link_to "詳細", post, id: "link_to_post" %></td>
           </tr>
