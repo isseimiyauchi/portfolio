@@ -1,62 +1,62 @@
-<div class="container-fiuld">
-  <div class="row">
-    <div class="col-md-12 user-view">
-      <div class="post-view-box">
-        <div class="post-content">
-          <div class="row">
-            <label class="col-md-3" for="title">タイトル</label>
-            <div class="col-md-9">
-              <%= @post.title %>
+<div class="p-5">
+  <div class="container-fiuld">
+    <div class="row">
+      <div class="col-md-12 user-view">
+        <div class="post-view-box">
+          <div class="post-content">
+            <div class="row">
+              <label class="col-md-3" for="title">タイトル</label>
+              <div class="col-md-9">
+                <%= @post.title %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="post-content">
-          <div class="row">
-            <label class="col-md-3" for="department_name">発信元</label>
-            <div class="col-md-9">
-              <% @post.tags.each do |tag| %>
-                <%= tag.name %>
-                  <% end %>
+          <div class="post-content">
+            <div class="row">
+              <label class="col-md-3" for="department_name">発信元</label>
+              <div class="col-md-9">
+                <% @post.tags.each do |tag| %>
+                  <%= tag.name %>
+                    <% end %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="post-content">
-          <div class="row">
-            <label class="col-md-3" for="article">記事</label>
-            <div class="col-md-9">
-              <%= @post.detail %>
+          <div class="post-content">
+            <div class="row">
+              <label class="col-md-3" for="article">記事</label>
+              <div class="col-md-9">
+                <%= @post.detail %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="like-container shadow">
+    <div>
+      <h5>閲覧件数: <%= @post.likes.count %></h5>
+    </div>
+    <div class="p-1">
+      <% if current_user.already_liked?(@post) %>
+        <%= link_to post_like_path(@post), method: :delete do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+        <% end %>
+      <% else %>
+        <%= link_to post_likes_path(@post), method: :post do %>
+          <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="p-1">
+      <h5>閲覧したユーザー</h5>
+      <% @post.liked_users.each do |user| %>
+        <ul>
+          <li>
+            <%= user.email %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
 </div>
-<div class="like-container shadow">
-  <div>
-    <h5>閲覧件数: <%= @post.likes.count %>
-    </h5>
-  </div>
-  <div>
-    <% if current_user.already_liked?(@post) %>
-      <%= link_to post_like_path(@post), method: :delete do %>
-        <span class="fa fa-heart like-btn-unlike"></span>
-      <% end %>
-    <% else %>
-      <%= link_to post_likes_path(@post), method: :post do %>
-        <span class="fa fa-heart like-btn"></span>
-      <% end %>
-    <% end %>
-  </div>
-  <div>
-    <h5>閲覧したユーザー</h5>
-    <% @post.liked_users.each do |user| %>
-      <ul>
-        <li>
-          <%= user.email %>
-        </li>
-      </ul>
-      <% end %>
-  </div>
-</div>
-

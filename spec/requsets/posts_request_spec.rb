@@ -42,7 +42,6 @@ RSpec.describe "社内ニュース確認テスト", type: :request do
 
     it '記事詳細が表示される' do
       expect(response.body).to include(post.title)
-      expect(response.body).to include(post.from)
       expect(response.body).to include(post.detail)
     end
   end

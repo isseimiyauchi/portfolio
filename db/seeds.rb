@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Tag.create([
-    { name: '事務' },
-    { name: '本社' },
-    { name: '支店長'},
-    { name: '社外'}
-])
+             { name: '事務' },
+             { name: '本社' },
+             { name: '支店長' },
+             { name: '社外' }
+           ])

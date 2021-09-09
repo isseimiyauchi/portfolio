@@ -8,12 +8,6 @@ RSpec.describe Post, type: :model do
       expect(post.errors.messages[:title]).to include('を入力してください')
     end
 
-    it 'fromが未入力の場合' do
-      post = Post.new
-      post.valid?
-      expect(post.errors.messages[:from]).to include('を入力してください')
-    end
-
     it 'detailが未入力の場合' do
       post = Post.new
       post.valid?

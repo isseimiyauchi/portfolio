@@ -8,11 +8,9 @@
       <%= search_form_for @q, url: search_customers_path do |f| %>
         <%= f.text_field :name_cont , placeholder: "お客様氏名" , class: 'input' %>
         <%= button_tag type: 'submit' , class: 'search__button' do %>
+          <i class="fal fa-file-search"></i>
         <% end %>
       <% end %>
-      <div class="icon_wap">
-        <i class="fas fa-search"></i>
-      </div>
     </div>
     <% @customers.each do |customer| %>
       <ol class="customer-information">

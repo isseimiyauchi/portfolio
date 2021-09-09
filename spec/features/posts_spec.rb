@@ -27,7 +27,6 @@ RSpec.feature '記事画面確認テスト', type: :feature do
 
     it '一覧項目が表示できているか' do
       expect(page).to have_content post.title
-      expect(page).to have_content post.from
       expect(page).to have_content post.detail
     end
   end

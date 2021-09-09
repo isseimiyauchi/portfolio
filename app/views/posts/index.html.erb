@@ -5,20 +5,16 @@
         <%= search_form_for @q, url: search_posts_path do |f| %>
           <%= f.text_field :detail_cont , placeholder: "何かお探しですか？" , class: 'input' %>
           <%= button_tag type: 'submit' , class: 'search__button' do %>
+            <i class="fab fa-searchengin"></i>
           <% end %>
         <% end %>
-        <div class="icon_wap">
-          <i class="fas fa-search"></i>
-        </div>
+      </div>
+    </div>
+    <div class="p-2 bd-highlight">
+      <div class="p-3">
         <%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
-      <%= select_tag :tag_id,
-                     options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
-                     {
-                       prompt: 'タグで絞り込み検索',
-                       onchange: 'submit(this.form);'
-                     }
-      %>
-    <% end %>
+          <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]), {prompt: 'タグで絞り込み検索', onchange: 'submit(this.form);' } %>
+        <% end %>
       </div>
     </div>
     <div class="p-2 bd-highlight">
