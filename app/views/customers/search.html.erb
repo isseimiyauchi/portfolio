@@ -5,13 +5,12 @@
   </div>
   <div class="customers mt-5">
     <% @search_customers.each do |customer| %>
-      <ol>
+      <ol class="customer-information">
         <%= link_to customer do %>
-          <li>
+          <li class="customer-item">
             <p><%= customer.name %></p>
             <p><%= customer.address %></p>
             <p><%= customer.memo %></p>
-            <p><%= customer.longitude%><p>
           </li>
         <% end %>
       </ol>

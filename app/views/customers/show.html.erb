@@ -5,24 +5,21 @@
   </div>
   <div>
     <div>
-      <div class="p-5 m-5 shadow">
-        <div>
-          <h3>お客様情報</h3>
-        </div>
-        <table>
-          <tr class="customer-line">
+      <div class="p-5 m-5">
+        <table class="table-custom">
+          <tr>
             <th>氏名</th>
             <td><%= @customer.name %></td>
           </tr>
-          <tr class="customer-line">
+          <tr>
             <th>住所</th>
             <td><%= @customer.address %></td>
           </tr>
-          <tr class="customer-line">
+          <tr>
             <th>電話番号</th>
             <td><%= @customer.number %></td>
           </tr>
-          <tr class="customer-line">
+          <tr>
             <th>主権者</th>
             <td><% if @customer.right == true %>
               ○
@@ -30,18 +27,18 @@
 
             <% end %></td>
           </tr>
-          <tr class="customer-line">
+          <tr>
             <th>資産背景</th>
             <td><%= @customer.assets %></td>
           </tr>
-          <tr class="customer-line">
+          <tr>
             <th>メモ</th>
             <td><%= @customer.memo %></td>
           </tr>
         </table>
         <div class="d-flex flex-row bd-highlight mt-3">
-          <div class="mt-3"><%= link_to "編集", edit_customer_path, id: "link_to_edit", class: "bd-highlight" %></div>
-          <div class="delete-button"><%= button_to "削除", customer_path(@customer), method: :delete, class: "ml-2 bd-highlight" %></div>
+          <div><%= button_to "編集", edit_customer_path, method: :get, class: "btn btn--get btn--cubic btn--shadow" %></div>
+          <div class="delete-button"><%= button_to "削除", customer_path(@customer), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn--danger btn--cubic btn--shadow" %></div>
         </div>
       </div>
     </div>

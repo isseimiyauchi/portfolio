@@ -50,20 +50,20 @@ RSpec.describe "社内ニュース確認テスト", type: :request do
     context '正しいパラメータが渡されている場合' do
       it '検索後の対象データに想定している内容があること' do
         @params = {}
-        @params[:q] = { detail_cont: 'test2' }
+        @params[:q] = { title_cont: 'test2' }
         @q = Post.ransack(@params)
         @posts = @q.result
-        expect(@posts) == ({ detail: 'test2' })
+        expect(@posts) == ({ title: 'test2' })
       end
     end
 
     context '不正なパラメータが渡されている場合' do
       it '検索後の対象データに想定している内容がないこと' do
         @params = {}
-        @params[:q] = { detail_cont: 'test2' }
+        @params[:q] = { title_cont: 'test2' }
         @q = Post.ransack(@params)
         @posts = @q.result
-        expect(@posts) != ({ detail: 'テスト２' })
+        expect(@posts) != ({ title: 'テスト２' })
       end
     end
   end

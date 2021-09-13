@@ -39,25 +39,51 @@ p {
   margin-bottom: 1rem;
 }
 
-table {
+.table-custom{
+  width: 100%;
   border-collapse: collapse;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
 }
 
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
+.table-custom tr{
+  border-bottom: solid 2px white;
 }
 
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
+.table-custom tr:last-child{
+  border-bottom: none;
 }
 
+.table-custom th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.table-custom th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.table-custom td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px;
+}
+
+//flash
 .success {
   background-color: #98ecaa7a;
   color: #fff;
@@ -80,6 +106,46 @@ tr {
   background-color: #ff7f50;
   color: #fff;
   text-align: center;
+}
+
+//btn
+.btn--get {
+  color: #fff;
+  background-color: #0a4e199f;
+  border-bottom: 5px solid #013113;
+}
+.btn--get:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #0a4e199f;
+  border-bottom: 2px solid #013113;
+}
+
+.btn--danger {
+  color: #fff;
+  background-color: #9b0a059f;
+  border-bottom: 5px solid #420202;
+}
+.btn--danger:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #9b0a059f;
+  border-bottom: 2px solid #420202;
+}
+.btn--shadow {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.btn--blue {
+  color: #fff;
+  background-color: #52c2d0;
+  width: 200px;
+}
+
+.btn--blue:hover {
+  color: #fff;
+  background: #43a7b4;
 }
 
 //header
@@ -155,23 +221,55 @@ tr {
   padding: 20px;
 }
 
+.sub-container {
+  margin-left: 350px;
+}
+
 .like-container {
-  width: 500px;
-  background-color: #fff;
-  border: 1px solid #eaedef;
-  padding: 10px;
-  margin-top: 30px;
-  margin-left: 400px;
-  text-align: center;
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #fff;
+  height: auto;
+}
+
+.like-container .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: #fff;
+    color: #050505;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
 }
 
 .like-btn {
+  font-size: 50px;
   color: #8899a6;
 }
 
 .like-btn-unlike {
   color: #ff2581;
 }
+
+.comment-container {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+}
+
+.comment-item {
+  padding: 10px 0;
+  border-top: solid #e8e8e8;
+  color: #000;
+}
+
+
 
 @mixin input{
   border: none;
@@ -215,27 +313,27 @@ tr {
 
 
 //top_page
-.menu-nav {
+.title-nav {
   position: relative;
   display: inline-block;
   height: 64px;
-  margin-left: 30px;
+  margin-bottom: 10px;
   padding: 1rem 2rem 1rem 3rem;
   color: #fff;
-  background: #0c0b0b;
+  background: #0c0c0c;
 }
 
-.menu-nav:before {
+.title-nav:before {
   position: absolute;
   top: 0;
   left: -30px;
   content: '';
   border-width: 32px 30px 32px 0;
   border-style: solid;
-  border-color: transparent #030303 transparent transparent;
+  border-color: transparent #0c0c0c transparent transparent;
 }
 
-.menu-nav:after {
+.title-nav:after {
   position: absolute;
   top: calc(50% - 7px);
   left: -10px;
@@ -375,11 +473,10 @@ tr {
   padding: 0;
 }
 
-.customer-line {
-  height: 30px;
+.customer-item:hover {
+  color: rgb(70, 153, 135);
 }
 
 .delete-button {
-  margin-left: 1000px;
-  margin-top: 10px;
+  margin-left: 20px;
 }
