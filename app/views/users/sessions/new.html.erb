@@ -4,11 +4,13 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages" , resource: resource %>
         <p class="title">ログイン</p>
-        <div class="form-group m-2">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
+        <div class="m-2">
+          <%= f.label :email, "メールアドレス" , class: "required" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control" %>
         </div>
-        <div class="form-group m-2">
-          <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "form-control" %>
+        <div class="m-2">
+          <%= f.label :password, "パスワード" , class: "required" %>
+          <%= f.password_field :password, autocomplete: "new-password" , class: "form-control" %>
         </div>
           <%= f.submit "ログイン", class: "form-control btn-primary my-4" %>
       <% end %>

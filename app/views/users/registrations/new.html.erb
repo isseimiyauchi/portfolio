@@ -1,21 +1,32 @@
 <div class="container">
-  <div class="device_frame shadow">
-    <div class="device_inner">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "devise/shared/error_messages" , resource: resource %>
-        <p class="title">新規登録</p>
-        <div class="form-group m-2">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
-        </div>
-        <div class="form-group m-2">
-          <%= f.password_field :password, autocomplete: "new-password" , placeholder: "パスワード" , class: "form-control"%>
-        </div>
-        <div class="form-group m-2">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: "パスワード確認" ,　class: "form-control" %>
-        </div>
-          <%= f.submit "新規登録", class: "form-control btn-primary my-4" %>
-      <% end %>
-      <%= link_to "ログイン" , new_user_session_path, class: 'nav-link active' , method: :get %>
+    <div class="device_frame shadow">
+      <div class="device_inner">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages" , resource: resource %>
+          <p class="title">新規登録</p>
+          <div class="m-2">
+            <%= f.label :email, "メールアドレス", class: "required" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          </div>
+          <div class="m-2">
+            <%= f.label :password, "パスワード", class: "required" %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+          </div>
+          <div class="m-2">
+            <%= f.label :password_confirmation, "パスワード確認", class: "required" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          </div>
+          <div class="m-2">
+            <%= f.label :user_name, "氏名", class: "required" %>
+              <%= f.text_field :user_name, class: "form-control" %>
+          </div>
+          <div class="m-2">
+            <%= f.label :avatar, "アイコン画像", class: "required" %>
+            <%= f.file_field :avatar %>
+          </div>
+          <%= f.submit "新規登録" , class: "form-control btn-primary my-4" %>
+            <% end %>
+              <%= link_to "ログイン" , new_user_session_path, class: 'nav-link active' , method: :get %>
+      </div>
     </div>
-  </div>
 </div>

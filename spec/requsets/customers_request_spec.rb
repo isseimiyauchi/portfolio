@@ -72,6 +72,44 @@ RSpec.describe "お客様情報確認", type: :request do
     end
   end
 
+  describe 'POST #create' do
+    context 'パラメータが妥当な場合' do
+      it 'リクエストが成功すること' do
+        post customers_url, params: { customer: FactoryBot.attributes_for(:customer) }
+        expect(response.status).to eq 302
+      end
+
+      it 'ユーザーが登録されること' do
+        expect do
+          post customers_url, params: { customer: FactoryBot.attributes_for(:customer) }
+        end.to change(User, :count).by(1)
+      end
+
+      it 'リダイレクトすること' do
+        post customers_url, params: { customer: FactoryBot.attributes_for(:customer) }
+        expect(response).to redirect_to User.last
+      end
+    end
+
+    context 'パラメータが不正な場合' do
+      it 'リクエストが成功すること' do
+        post customers_url, params: { customer: FactoryBot.attributes_for(:customer, :invalid) }
+        expect(response.status).to eq 200
+      end
+
+      it 'ユーザーが登録されないこと' do
+        expect do
+          post customers_url, params: { customer: FactoryBot.attributes_for(:customer, :invalid) }
+        end.to_not change(User, :count)
+      end
+
+      it 'エラーが表示されること' do
+        post customers_url, params: { customer: FactoryBot.attributes_for(:customer, :invalid) }
+        expect(response.body).to include 'prohibited this user from being saved'
+      end
+    end
+  end
+
   describe 'お客様名検索のテスト' do
     context '正しいパラメータが渡されている場合' do
       it '検索後の対象データに想定している内容があること' do

@@ -4,10 +4,12 @@ RSpec.feature 'お客様情報表示確認テスト', type: :feature do
   describe '#index' do
     let(:user) { create(:user) }
     let(:customer) { create(:customer, user_id: user.id) }
+    let(:avatar) { create(:avatar) }
 
     before do
       sign_in user
       visit customer_path(customer.id)
+      user.avatar << avatar
     end
 
     it 'お客様情報がきちんと表示されるか' do

@@ -13,15 +13,25 @@
       <% end %>
     </div>
     <% @customers.each do |customer| %>
-      <ol class="customer-information">
-        <%= link_to customer do %>
-          <li class="customer-item">
-            <p><%= customer.name %></p>
-            <p><%= customer.address %></p>
-            <p><%= customer.memo %></p>
-          </li>
-        <% end %>
-      </ol>
+      <% @users = User.where(id: customer.user_id) %>
+      <% @users.each do |user| %>
+        <ol class="customer-information">
+          <%= link_to customer do %>
+            <li class="customer-item">
+              <div class="customer-li">
+                <p><%= customer.name %></p>
+                <p><%= customer.address %></p>
+                <p><%= customer.memo %></p>
+              </div>
+              <div class="posted-user">
+                <%= image_tag user.avatar.variant(resize:'50x50'), class: "icon" %>
+                <p><%= user.user_name %></p>
+                <p><%= customer.created_at.strftime("%Y年%m月%d日") %></p>
+              </div>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
     <% end %>
   </div>
 </div>
