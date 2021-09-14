@@ -20,7 +20,7 @@ RUN apt-get update                                                              
     libc6-dev                                                                                                                           \
     nodejs                                                                                                                              \
     yarn                                                                                                                                \
-    zip                                                                                                                                 \
+    zip                                                                                                                               \
   && gem install foreman                                                                                                                \
   && apt-get clean
 WORKDIR /myapp

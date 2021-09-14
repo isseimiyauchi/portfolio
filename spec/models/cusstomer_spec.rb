@@ -15,16 +15,7 @@ RSpec.describe Customer, type: :model do
   end
 
   describe "バリデーションテスト" do
-    it 'nameが未入力の場合' do
-      customer = Customer.new
-      customer.valid?
-      expect(customer.errors.messages[:name]).to include('を入力してください')
-    end
-
-    it 'memoが未入力の場合' do
-      customer = Customer.new
-      customer.valid?
-      expect(customer.errors.messages[:memo]).to include('を入力してください')
-    end
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:memo) }
   end
 end

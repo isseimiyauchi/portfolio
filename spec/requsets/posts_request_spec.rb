@@ -1,70 +1,59 @@
 require 'rails_helper'
 
 RSpec.describe "社内ニュース確認テスト", type: :request do
-  describe "#index" do
-    let(:user) { create(:user) }
-    let(:post) { create(:post, user_id: user.id) }
+  describe "GET#index" do
+    it "リクエストが成功するか" do
 
-    before do
-      sign_in user
-      get posts_path
-    end
-    it 'リクエストが成功すること' do
-      expect(response).to have_http_status(200)
-    end
-
-    it 'タイトルが表示されていること' do
-      expect(response.body).to include "test"
     end
   end
 
-  describe "#new" do
-    let(:user) { create(:user) }
-    let(:post) { create(:post, user_id: user.id) }
-    it 'リクエストが成功すること' do
-      sign_in user
-      get new_post_path
-      expect(response).to have_http_status(200)
+  describe "GET#new" do
+    it "リクエストが成功するか" do
+
     end
   end
 
-  describe "#show" do
-    let(:user) { create(:user) }
-    let(:post) { create(:post, user_id: user.id) }
-    before do
-      sign_in user
-      get post_path(post.id)
-    end
+  describe "GET#show" do
+    it "リクエストが成功するか" do
 
-    it 'リクエストが成功すること' do
-      expect(response.status).to eq 200
     end
+    it "記事の内容が表示できているか" do
 
-    it '記事詳細が表示される' do
-      expect(response.body).to include(post.title)
-      expect(response.body).to include(post.detail)
     end
   end
 
-  describe '記事検索のテスト' do
-    context '正しいパラメータが渡されている場合' do
-      it '検索後の対象データに想定している内容があること' do
-        @params = {}
-        @params[:q] = { title_cont: 'test2' }
-        @q = Post.ransack(@params)
-        @posts = @q.result
-        expect(@posts) == ({ title: 'test2' })
+  describe "POST#create" do
+    context "パラメーターが妥当な場合" do
+      it "リクエストが成功するか" do
+      end
+      it "記事が投稿できるか" do
+      end
+      it "リダイレクトできているか" do
       end
     end
 
-    context '不正なパラメータが渡されている場合' do
-      it '検索後の対象データに想定している内容がないこと' do
-        @params = {}
-        @params[:q] = { title_cont: 'test2' }
-        @q = Post.ransack(@params)
-        @posts = @q.result
-        expect(@posts) != ({ title: 'テスト２' })
+    context "パラメーターが不正な場合" do
+      it "リクエストが成功するか" do
       end
+      it "記事が投稿できない" do
+      end
+      it "エラーメッセージを受け取っているか" do
+      end
+    end
+  end
+
+  describe "タイトル検索機能" do
+    context "パラメーターが妥当な場合" do
+
+    end
+    context "パラメーターが不正な場合" do
+
+    end
+  end
+
+  describe "タグ検索機能" do
+    it "タグで絞り込めるか" do
+
     end
   end
 end

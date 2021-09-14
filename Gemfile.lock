@@ -202,6 +202,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rmagick (4.2.2)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -314,7 +315,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  mini_magick
+  mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-doc
@@ -322,6 +323,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.1)
   ransack
+  rmagick
   rspec-rails
   rubocop
   rubocop-rails

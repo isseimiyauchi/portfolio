@@ -24,8 +24,8 @@
                 <p><%= customer.memo %></p>
               </div>
               <div class="posted-user">
-                <%= image_tag user.avatar.variant(resize:'50x50'), class: "icon" %>
-                <p><%= user.user_name %></p>
+                <%= image_tag user.avatar.variant(gravity: :center, resize:"90x90^", crop:"90x90+0+0").processed, class: "icon" %>
+                <p class="mt-1"><%= user.user_name %></p>
                 <p><%= customer.created_at.strftime("%Y年%m月%d日") %></p>
               </div>
             </li>

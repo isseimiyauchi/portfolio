@@ -1,13 +1,12 @@
 class CommentsController < ApplicationController
-
   def create
     @comment = current_user.comments.new(comment_params)
     if @comment.save
       flash[:success] = "コメントを投稿しました。"
-      redirect_back(fallback_location: post_path(post_id))
+      redirect_back(fallback_location: root_path)
     else
       flash[:danger] = "コメントを投稿できませんでした。"
-      redirect_back(fallback_location: post_path(post_id))
+      redirect_back(fallback_location: root_path)
     end
   end
 

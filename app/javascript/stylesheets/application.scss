@@ -10,15 +10,8 @@ body {
   height: 100%;
 }
 
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
 .icon {
   border-radius: 50%;
-  margin-right: 10px;
-  margin-top: 5px;
 }
 
 a {
@@ -45,6 +38,7 @@ p {
   margin-bottom: 1rem;
 }
 
+//table
 .table-custom{
   width: 100%;
   border-collapse: collapse;
@@ -168,17 +162,17 @@ p {
 
 //devise
 .device {
-    padding-top: 36px;
-    font-size: 16px;
+  padding-top: 36px;
+  font-size: 16px;
 }
 
 .device_frame {
-    max-width: 600px;
-    text-align: center;
-    padding: 24px;
-    margin: 150px auto;
-    background-color: white;
-    border-radius: 4px;
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 150px auto;
+  background-color: white;
+  border-radius: 4px;
 }
 
 .device_inner {
@@ -240,18 +234,18 @@ p {
 }
 
 .like-container .box-title {
-    position: absolute;
-    display: inline-block;
-    top: -27px;
-    left: -3px;
-    padding: 0 9px;
-    height: 25px;
-    line-height: 25px;
-    font-size: 17px;
-    background: #fff;
-    color: #050505;
-    font-weight: bold;
-    border-radius: 5px 5px 0 0;
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #fff;
+  color: #050505;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
 }
 
 .like-btn {

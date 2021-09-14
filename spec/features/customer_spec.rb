@@ -1,28 +1,35 @@
 require 'rails_helper'
 
 RSpec.feature 'お客様情報表示確認テスト', type: :feature do
-  describe '#index' do
-    let(:user) { create(:user) }
-    let(:customer) { create(:customer, user_id: user.id) }
-    let(:avatar) { create(:avatar) }
+  feature "一覧ページ" do
+    scenario "リンクテスト" do
 
-    before do
-      sign_in user
-      visit customer_path(customer.id)
-      user.avatar << avatar
+    end
+  end
+
+  feature "新規登録ページ" do
+    scenario "リンクテスト" do
+
+    end
+  end
+
+  feature "詳細ページ" do
+    scenario "お客様情報詳細が表示できているか" do
+
     end
 
-    it 'お客様情報がきちんと表示されるか' do
-      expect(page).to have_content customer.name
-      expect(page).to have_content customer.address
-      expect(page).to have_content customer.number
-      expect(page).to have_content customer.assets
-      expect(page).to have_content customer.memo
+    scenario "ボタンテスト" do
+
+    end
+  end
+
+  feature "編集ページ" do
+    scenario "お客様情報詳細が表示できているか" do
+
     end
 
-    it 'リンクテスト' do
-      click_link 'link_to_edit'
-      expect(page).to have_current_path edit_customer_path(customer.id)
+    scenario "ボタンテスト" do
+
     end
   end
 end
