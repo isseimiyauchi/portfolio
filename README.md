@@ -15,18 +15,21 @@ SST(Sales Support Tool)
 ## postページ
 ![971BA87C-D06D-40F9-AC5B-0112BCE982DC_1_105_c](https://user-images.githubusercontent.com/81849915/132655613-cfa2d00b-1ff5-4137-8632-b4f0b4aa77f0.jpeg)
 
-![91D72E45-031C-4EB1-8B03-D3014420B4B7_1_105_c](https://user-images.githubusercontent.com/81849915/132655784-a060389b-e86a-46b0-8d62-a3f71495c2de.jpeg)
+![2D9ABD52-148C-44E3-A028-BE0FDA13BB3E_1_105_c](https://user-images.githubusercontent.com/81849915/133227754-e596c70b-e402-426f-90e0-6285607aa7b2.jpeg)
 
-![556CD1D3-44BA-4E30-9550-4061E45143A6_1_105_c](https://user-images.githubusercontent.com/81849915/132655869-2f81993e-a444-4811-bdfc-a831e07f71cb.jpeg)
+![4F66048A-BA96-4E2C-9B79-5BEB11CCA25B_1_105_c](https://user-images.githubusercontent.com/81849915/133228073-d91588d9-ddb5-482c-af37-df8434d68a29.jpeg)
+
+![078AB90B-049D-495E-B1D0-976783C1F4CF_1_105_c](https://user-images.githubusercontent.com/81849915/133228148-424b5828-43ff-405b-8759-8c336575d64d.jpeg)
 
 - 社内ニュースの一覧、新規登録、閲覧ページの実装。
-- いいね機能をつけ、誰が閲覧しているか確認できる。
+- 記事へのコメント機能をつけ、投稿者のアイコンと名前を表示。
+- いいね機能をつけ、閲覧数を確認できる。
 - タグでグループ分けし、絞り込める。
 - 記事詳細で検索でき、絞り込める。
 
 # こだわりポイント
-- 使いやすさに重きを置き、極力シンプルな作りにしました。
-- postページの絞り込む手段を二つ設け、多角的に検索できるような作りにしました。
+- どこでも使える営業ツールではなく、個人宅向けの不動産営業にターゲットを絞って、必要な機能をつけました。
+- 社内ニュースは、いちいちメールで送られくるのが営業時代すごく嫌だったので、必要な情報をいち早く見れるよう、タグとキーワード両方で検索をかけれるようにしました。
 
 # ER図
 ![6F3F2648-DA58-4FDB-B521-BC593268AF96_1_105_c](https://user-images.githubusercontent.com/81849915/132639854-ad96577f-4585-44ff-a15d-94b7392ba05a.jpeg)
