@@ -1,12 +1,12 @@
 <div class=" like-container d-flex align-items-center m-5">
   <span class="box-title">
     <% if current_user.already_liked?(@post) %>
-      <%= link_to post_like_path(@post), method: :delete, id: "delete_like" do %>
-        <span class="fa fa-heart like-btn-unlike"></span>
+      <%= link_to post_like_path(@post), method: :delete do %>
+        <span class="fa fa-heart like-btn-unlike", id="nolike-btn"></span>
       <% end %>
     <% else %>
-      <%= link_to post_likes_path(@post), method: :post, id: "create_like" do %>
-        <span class="fa fa-heart like-btn"></span>
+      <%= link_to post_likes_path(@post), method: :post do %>
+        <span class="fa fa-heart like-btn", id="liking-btn"></span>
       <% end %>
     <% end %>
       閲覧件数: <%= @post.likes.count %>
