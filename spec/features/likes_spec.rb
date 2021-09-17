@@ -13,11 +13,11 @@ RSpec.feature "Likes", type: :feature do
     it 'ユーザーが他の投稿をいいね、解除できる' do
       find('#liking-btn').click
       expect(page).to have_selector '#nolike-btn'
-    end
+      expect(post.likes.count).to eq(1)
 
-    it "いいねを解除できる" do
       find('#nolike-btn').click
       expect(page).to have_selector '#liking-btn'
+      expect(post.likes.count).to eq(0)
     end
   end
 end

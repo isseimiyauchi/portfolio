@@ -62,7 +62,7 @@ RSpec.describe "社内ニュース確認テスト", type: :request do
         expect(response.status).to eq 302
       end
 
-      it 'お客様情報が登録されること' do
+      it '記事が登録されること' do
         expect do
           post posts_url, params: { post: post_params }
         end.to change(Post, :count).by(1)
@@ -80,7 +80,7 @@ RSpec.describe "社内ニュース確認テスト", type: :request do
         expect(response.status).to eq 200
       end
 
-      it 'お客様情報が登録されないこと' do
+      it '記事が登録されないこと' do
         expect do
           post posts_url, params: { post: invalid_post_params }
         end.to_not change(Post, :count)

@@ -18,7 +18,7 @@ RSpec.feature 'お客様情報表示確認テスト', type: :feature do
       expect(page).to have_content customer.memo
     end
 
-    it 'リンクテスト' do
+    it 'リンクテスト[編集]' do
       click_button '編集'
       expect(page).to have_current_path edit_customer_path(customer.id)
     end

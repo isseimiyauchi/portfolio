@@ -2,8 +2,10 @@ inherit_from: .rubocop_todo.yml
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    - 'db/schema.rb'
+    - 'db/**/*'
 Style/FrozenStringLiteralComment:
   Enabled: false
 Documentation:
   Enabled: false
+AllCops:
+    SuggestExtensions: false

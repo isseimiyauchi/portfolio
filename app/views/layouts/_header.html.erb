@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <%= link_to "Campany Name", root_path, class: "navbar-brand" %>
+    <%= link_to "Campany Name", root_path, class: "navbar-brand", id: "home_link" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <%= link_to "お客様一覧", customers_path, class: "nav-link" %>
-        <%= link_to "お客様登録", new_customer_path, class: "nav-link" %>
-        <%= link_to "社内ニュース", posts_path, class: "nav-link" %>
+        <%= link_to "お客様一覧", customers_path, class: "nav-link", id: "customers_link" %>
+        <%= link_to "お客様登録", new_customer_path, class: "nav-link", id: "customer_new_link" %>
+        <%= link_to "社内ニュース", posts_path, class: "nav-link", id: "posts_link" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </div>
     </div>
